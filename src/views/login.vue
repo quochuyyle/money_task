@@ -1,10 +1,10 @@
 <template>
-  <h1>About</h1>
+  <h1>Login page</h1>
 </template>
 
 <script>
 export default {
-  name: "AboutView",
+  name: "loginView",
 };
 </script>
 
