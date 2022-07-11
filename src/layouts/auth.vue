@@ -1,11 +1,16 @@
 <template>
-  <h1>Auth layout</h1>
+  <navigation-brand />
   <slot />
 </template>
 
 <script>
+import NavigationBrand from "@/components/NavigationBrand";
+
 export default {
   name: "authLayout",
+  components: {
+    NavigationBrand,
+  },
 };
 </script>
 

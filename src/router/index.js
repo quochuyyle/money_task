@@ -7,7 +7,7 @@ const routes = [
     meta: {
       layout: "default",
     },
-    component: () => import(/*webpackChunkName: "home" */ "../views/index"),
+    component: () => import(/* webpackChunkName: "home" */ "../views/index"),
   },
   {
     path: "/register",
@@ -16,7 +16,7 @@ const routes = [
       layout: "auth",
     },
     component: () =>
-      import(/*webpackChunkName: "register" */ "../views/register"),
+      import(/* webpackChunkName: "register" */ "../views/register"),
   },
   {
     path: "/login",
@@ -24,7 +24,7 @@ const routes = [
     meta: {
       layout: "auth",
     },
-    component: () => import(/*webpackChunkName: "login" */ "../views/login"),
+    component: () => import(/* webpackChunkName: "login" */ "../views/login"),
   },
   {},
 ];
