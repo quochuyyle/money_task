@@ -11,7 +11,6 @@ export default {
   setup() {
     const { getUser } = useUser();
     const { user } = getUser();
-    console.log(user);
     return { user };
   },
 };

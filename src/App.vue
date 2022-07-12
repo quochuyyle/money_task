@@ -14,6 +14,7 @@ export default {
   components: {},
   setup() {
     const route = useRoute();
+    console.log(route.meta);
     return {
       layout: computed(() => (route.meta.layout || PUBLIC_LAYOUT) + "-layout"),
     };
