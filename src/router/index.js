@@ -17,6 +17,7 @@ const routes = [
       layout: "default",
       text: "Hey friend",
       leading: true,
+      isShowFooter: true,
     },
     component: () => import(/* webpackChunkName: "home" */ "../views/index"),
   },
@@ -43,6 +44,7 @@ const routes = [
     meta: {
       text: "Profile",
       leading: false,
+      isShowFooter: true,
     },
     component: () =>
       import(/* webpackChunkName: "profile" */ "../views/profile"),
@@ -63,6 +65,7 @@ const routes = [
       layout: "default",
       text: "Report",
       leading: false,
+      isShowFooter: true,
     },
     component: () => import(/* webpackChunkName: "report" */ "../views/report"),
   },
@@ -73,6 +76,7 @@ const routes = [
       layout: "default",
       text: "Budget",
       leading: false,
+      isShowFooter: true,
     },
     component: () => import(/* webpackChunkName: "budget" */ "../views/budget"),
   },
@@ -83,6 +87,7 @@ const routes = [
       layout: "default",
       text: "New Transaction",
       leading: false,
+      isShowFooter: false,
     },
     component: () =>
       import(/* webpackChunkName: "transaction" */ "../views/new-transaction"),

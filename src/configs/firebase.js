@@ -1,5 +1,10 @@
 import * as firebase from "firebase/app";
-import { getFirestore, serverTimestamp } from "firebase/firestore";
+import {
+  getFirestore,
+  serverTimestamp,
+  collection,
+  addDoc,
+} from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -7,6 +12,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -23,6 +30,7 @@ firebase.initializeApp(firebaseConfig);
 
 const projectAuth = getAuth();
 const projectFireStore = getFirestore();
+const projectStorage = getStorage();
 
 const timestamp = serverTimestamp();
 
@@ -30,8 +38,14 @@ export {
   projectAuth,
   projectFireStore,
   timestamp,
+  projectStorage,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  collection,
+  addDoc,
+  ref,
+  uploadBytes,
+  getDownloadURL,
 };
