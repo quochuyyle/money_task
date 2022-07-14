@@ -18,8 +18,13 @@
         </div>
         <div class="flex">
           <ul>
-            <li>
+            <li v-if="meta.isShowIconHeader">
               <i class="t2ico t2ico-notification text-2xl"></i>
+            </li>
+            <li v-else>
+              <button class="font-bold text-dark text-xl outline-none">
+                Add
+              </button>
             </li>
           </ul>
         </div>

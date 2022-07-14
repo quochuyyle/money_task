@@ -15,10 +15,10 @@
               <div class="flex flex-col border-b border-gray-100 pb-1">
                 <span class="font-semibold text-xs text-dark">Total</span>
                 <input
+                  v-model="total"
                   class="text-4xl text-dark w-full outline-none top-1"
                   placeholder="0"
                   type="number"
-                  v-model="total"
                 />
               </div>
             </label>
@@ -35,10 +35,10 @@
               <div class="flex-1 border-b border-gray-100 py-3">
                 <input
                   id="category"
+                  v-model="category"
                   class="text-xl text-dark w-full outline-none top-1"
                   placeholder="Select a category"
                   type="text"
-                  v-model="category"
                 />
               </div>
             </label>
@@ -55,10 +55,10 @@
               <div class="flex-1 border-b border-gray-100 py-3">
                 <input
                   id="note"
+                  v-model="note"
                   class="text-dark w-full outline-none top-1"
                   placeholder="Note"
                   type="text"
-                  v-model="note"
                 />
               </div>
             </label>
@@ -71,7 +71,9 @@
                 </span>
               </div>
               <div class="flex-1 py-2 border-b border-gray-100">
-                <div class="text-dark w-full">{{ new Date() }}</div>
+                <div class="text-dark w-full">
+                  <datepicker v-model="time" />
+                </div>
               </div>
             </label>
           </div>
@@ -114,10 +116,10 @@
                 <div class="flex-1 py-2 border-b border-gray-100">
                   <input
                     id="location"
+                    v-model="location"
                     class="text-xl text-dark w-full outline-none"
                     placeholder="Select a location"
                     type="text"
-                    v-model="location"
                   />
                 </div>
               </label>
@@ -132,10 +134,10 @@
                 <div class="flex-1 py-2">
                   <input
                     id="withPerson"
+                    v-model="withPerson"
                     class="text-xl text-dark w-full outline-none"
                     placeholder="With person"
                     type="text"
-                    v-model="withPerson"
                   />
                 </div>
               </label>
@@ -158,10 +160,10 @@
                 <div class="flex-1 py-2 border-gray-100">
                   <div class="w-full font-semibold">Upload photos</div>
                   <input
-                    type="file"
-                    name=""
                     id="file"
                     class="w-0 h-0 overflow-hidden absolute"
+                    name=""
+                    type="file"
                     @change="onChangeFile"
                   />
                 </div>
@@ -173,7 +175,16 @@
       </div>
     </template>
 
-    <button type="submit" class="bg-primary text-white">Add Transaction</button>
+    <div class="row mt-8">
+      <div class="container mx-auto bg-white text-white h-full w-full">
+        <button
+          class="bg-primary w-full font-semibold text-center text-xl py-2"
+          type="button"
+        >
+          <router-link :to="{ name: 'Home', params: {} }">Back</router-link>
+        </button>
+      </div>
+    </div>
   </form>
 </template>
 
@@ -182,9 +193,13 @@ import { ref } from "vue";
 import { useUser } from "@/composables/useUser";
 import useCollection from "@/composables/useCollection";
 import useStorage from "@/composables/useStorage";
+import Datepicker from "@vuepic/vue-datepicker";
 
 export default {
   name: "newTransactionView",
+  components: {
+    Datepicker,
+  },
   setup() {
     const isMoreDetails = ref(false);
     const { getUser } = useUser();

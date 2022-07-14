@@ -5,6 +5,7 @@ import "./assets/styles/global.css";
 import router from "./router/index";
 import { registerGlobalComponents } from "./utils/import";
 import { projectAuth } from "@/configs/firebase";
+import "@vuepic/vue-datepicker/dist/main.css";
 
 let app;
 
