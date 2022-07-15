@@ -114,13 +114,14 @@
                   </span>
                 </div>
                 <div class="flex-1 py-2 border-b border-gray-100">
-                  <input
-                    id="location"
-                    v-model="location"
-                    class="text-xl text-dark w-full outline-none"
-                    placeholder="Select a location"
-                    type="text"
-                  />
+                  <!--                  <input-->
+                  <!--                    id="location"-->
+                  <!--                    v-model="location"-->
+                  <!--                    class="text-xl text-dark w-full outline-none"-->
+                  <!--                    placeholder="Select a location"-->
+                  <!--                    type="text"-->
+                  <!--                  />-->
+                  <vue-select v-model="location"></vue-select>
                 </div>
               </label>
             </div>
@@ -194,11 +195,18 @@ import { useUser } from "@/composables/useUser";
 import useCollection from "@/composables/useCollection";
 import useStorage from "@/composables/useStorage";
 import Datepicker from "@vuepic/vue-datepicker";
+import VueSelect from "vue-select";
 
 export default {
   name: "newTransactionView",
   components: {
     Datepicker,
+    VueSelect,
+  },
+  data() {
+    return {
+      countries: [],
+    };
   },
   setup() {
     const isMoreDetails = ref(false);

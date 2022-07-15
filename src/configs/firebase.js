@@ -4,6 +4,8 @@ import {
   serverTimestamp,
   collection,
   addDoc,
+  getDocs,
+  query,
 } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
@@ -48,4 +50,6 @@ export {
   ref,
   uploadBytes,
   getDownloadURL,
+  getDocs,
+  query,
 };

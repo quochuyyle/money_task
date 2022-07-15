@@ -64,3 +64,34 @@ export const NAV_BOTTOM_ITEMS = [
     name: "Profile",
   },
 ];
+
+export const REPORT_TIME = [
+  {
+    name: "Week",
+  },
+  {
+    name: "Month",
+  },
+  {
+    name: "Year",
+  },
+];
+
+export const CATEGORIES = [
+  {
+    id: 1,
+    name: "All",
+  },
+  {
+    id: 2,
+    name: "Food",
+  },
+  {
+    id: 3,
+    name: "Shopping",
+  },
+  {
+    id: 4,
+    name: "Transport",
+  },
+];
